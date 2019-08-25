@@ -1,3 +1,5 @@
+# https://www.datanalytics.com/libro_r/graficos-basicos.html
+
 aq %>%
   group_by(Month) %>% 
   summarise(PT=mean(Temp)) %>% 
@@ -29,6 +31,16 @@ plot(cars$speed, cars$dist)
 # Representa gráficamente la anchura del sépalo contra su longitud 
 # (usando iris). Interpreta el gráfico.
 
-plot(iris$Sepal.Length, iris$Sepal.Width)
+plot(iris$Sepal.Length, iris$Sepal.Width,
+     xlab = "Longitud de Sepalo", ylab = "Anchura del Sepalo"
+     )
 
+plot(airquality$Temp, type = "l")
+plot(airquality$Temp)
+lines(airquality$Temp)
+abline(h = mean(airquality$Temp), col = "red")
+?par
 
+boxplot(iris$Sepal.Width ~ iris$Species, col = "gray",
+        main = "Especies de iris\nsegún la anchura del sépalo")
+  
